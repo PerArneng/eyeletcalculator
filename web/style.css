@@ -1,0 +1,90 @@
+
+body {
+    font-family: helvetica;
+    font-size: 22px;
+    color: #505050;
+    padding: 0;
+    margin: 0;
+}
+
+input {
+    font-size: 22px;
+    width: 120px;
+}
+
+.calc_icon {
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+.main_panel {
+    margin-left: 4px;
+}
+.title {
+    background: #505050;
+    color: #EEEEEE;
+    border-bottom: 4px solid lightgrey;
+    width: 100%;
+    font-size: 30px;
+    margin: 0;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.result_table td {
+    text-align: right;
+}
+
+.result_table tr:nth-child(even) {background: lightgrey}
+.result_table tr:nth-child(odd) {background: white}
+
+.input_label, .input_or_label {
+}
+
+.input_or_label {
+    font-weight: bold;
+}
+
+.side_label {
+    font-weight: bold;
+    margin-top:14px;
+}
+
+.input_table {
+    margin-left: 10px;
+}
+
+.table_spacing {
+    height: 10px;
+}
+
+.result_label {
+    font-weight: bold;
+}
+
+.result_value {
+    font-weight: normal;
+}
+
+.result_table {
+    margin-left: 10px;
+}
+
+.result_list {
+    vertical-align: top;
+    margin-bottom: auto;
+}
+
+.button {
+    text-align: center;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background: lightgrey;
+    font-weight: bold;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    color: #505050;
+    height: 80px;
+}

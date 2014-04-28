@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html ng-app="eyeletApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Eyelet Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="lib/angular-1.3.0-beta.7.js"></script>
+    <script type="text/javascript" src="script/EyeletCalculator.js"></script>
+    <script type="text/javascript" src="script/EyeletController.js"></script>
+    <script type="text/javascript" src="script/EyeletModel.js"></script>
+    <script type="text/javascript" src="script/EyeletScope.js"></script>
+    <script type="text/javascript" src="script/EyeletController.js"></script>
+    <script type="text/javascript" src="script/EyeletApp.js"></script>
+</head>
+<body>
+
+<div class="title"><img src="gfx/calc.png" class="calc_icon" />&Ouml;ljettkalkylator</div>
+
+<div ng-controller="EyeletController" class="main_panel">
+
+    <form>
+
+    <table>
+    <tr>
+    <td>
+
+    <div class="side_label">L&aring;ngdsida:</div>
+
+        <table class="input_table">
+            <tr>
+                <td><div class="input_label">L&auml;ngd (cm):</div></td>
+                <td><input type="text" ng-model="lsLength" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="table_spacing"></td>
+            </tr>
+            <tr>
+                <td><div class="input_label">Antal:</div></td>
+                <td><input type="text" ng-model="lsEyeletCount" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="input_or_label">Eller:</td>
+            </tr>
+            <tr>
+                <td><div class="input_label">CC (cm):</div></td>
+                <td><input type="text" ng-model="lsCc" /></td>
+            </tr>
+        </table>
+
+    </td><td>
+
+    <div class="side_label">Kortsida:</div>
+        <table class="input_table">
+            <tr>
+                <td><div class="input_label">L&auml;ngd (cm):</div></td>
+                <td><input type="text" ng-model="ssLength" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="table_spacing"></td>
+            </tr>
+            <tr>
+                <td><div class="input_label">Antal:</div></td>
+                <td><input type="text" ng-model="ssEyeletCount" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="input_or_label">Eller:</td>
+            </tr>
+            <tr>
+                <td><div class="input_label">CC (cm):</div></td>
+                <td><input type="text" ng-model="ssCc" /></td>
+            </tr>
+        </table>
+
+    </td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="button" class="button"
+                               ng-click="ctrl.recalculate()" value="Ber&auml;kna" /></td>
+    </tr>
+    </table>
+
+    </form>
+
+    <div class="side_label">Resultat:</div>
+    <table class="input_table">
+        <tr>
+            <td><div class="result_label">Antal &Ouml;ljetter:</div></td>
+            <td><div class="result_value">{{totalEyeletCount}}</div></td>
+        </tr>
+        <tr>
+            <td><div class="result_label">&Ouml;ljettavst&aring;nd L&aring;ngsida:</div></td>
+            <td><div class="result_value">{{longResult.eyeletDistanceFormatted}}</div></td>
+        </tr>
+        <tr>
+            <td><div class="result_label">&Ouml;ljettavst&aring;nd Kortsida:</div></td>
+            <td><div class="result_value">{{shortResult.eyeletDistanceFormatted}}</div></td>
+        </tr>
+    </table>
+
+
+    <div class="result_list">
+        <div class="side_label">L&aring;ngsida:</div>
+        <table class="result_table">
+            <tr><td class="result_label">Position</td><td class="result_label">Avst&aring;nd</td></tr>
+            <tr ng-repeat="eyelet in longResult.eyelets">
+                <td class="result_label">{{eyelet.index}}</td>
+                <td class="result_value">{{eyelet.position}}</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="result_list">
+        <div class="side_label">Kortsida:</div>
+        <table class="result_table">
+            <tr><td class="result_label">Position</td><td class="result_label">Avst&aring;nd</td></tr>
+            <tr ng-repeat="eyelet in shortResult.eyelets">
+                <td class="result_label">{{eyelet.index}}</td>
+                <td class="result_value">{{eyelet.position}}</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
